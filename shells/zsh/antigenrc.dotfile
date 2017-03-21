@@ -1,18 +1,18 @@
 antigen use oh-my-zsh
 antigen bundles <<EOBUNDLES
 git
+thefuck
 docker
 httpie
 history
 last-working-dir
-wd
-sudo
 web-search
 gitfast
 git-extras
 catimg
 chucknorris
-thefuck
+wd
+sudo
 soimort/translate-shell
 EOBUNDLES
 antigen theme dein0s/dotfiles shells/zsh/themes/custom_agnoster
