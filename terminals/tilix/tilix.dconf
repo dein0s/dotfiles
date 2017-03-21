@@ -1,0 +1,34 @@
+[/]
+quake-height-percent=100
+prompt-on-close=false
+middle-click-close=true
+recent-session-files=['/home/dein0s/Projects/plex_docker.json', '/home/dein0s/Projects/plex_channel_debug.json', '/home/dein0s/Projects/htop.json', '/home/dein0s/Projects/default.json']
+quake-disable-animation=true
+copy-on-select=true
+sidebar-on-right=false
+quake-hide-lose-focus=true
+terminal-title-style='small'
+theme-variant='dark'
+session-name=''
+quake-width-percent=100
+terminal-title-show-when-single=false
+
+[profiles]
+list=['2b7c4080-0ddd-46c5-8f23-563fd3ba789d']
+
+[profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
+foreground-color='#A7A7A7'
+visible-name='Default'
+dim-color-set=false
+login-shell=true
+palette=['#000000', '#CC0000', '#4D9A05', '#C3A000', '#3464A3', '#754F7B', '#05979A', '#D3D6CF', '#545652', '#EF2828', '#89E234', '#FBE84F', '#729ECF', '#AC7EA8', '#34E2E2', '#EDEDEB']
+badge-color-set=false
+cursor-shape='block'
+cursor-colors-set=false
+highlight-colors-set=false
+use-system-font=false
+use-theme-colors=false
+font='Meslo LG S for Powerline 10'
+background-color='#00002A2A3636'
+background-transparency-percent=9
+dim-transparency-percent=0

@@ -1,0 +1,12 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- shell:
+    - ["git submodule update --init --remote --recursive", "Installing submodules"]
+
+- clean: [
+    '~',
+    '~/.config',
+]

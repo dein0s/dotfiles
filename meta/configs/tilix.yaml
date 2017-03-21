@@ -1,0 +1,4 @@
+- link:
+    ~/.config/tilix.dconf: terminals/tilix/tilix.dconf
+- shell:
+    - ["dconf load /com/gexperts/Tilix/ < ~/.config/tilix.dconf", Attempting to load Tilix config via dconf.]

@@ -1,0 +1,4 @@
+- link:
+    ~/.fonts: gui/fonts
+- shell:
+    - ["if command -v fc-cache @>/dev/null; then fc-cache -f ~/.fonts; fi", Attempting to reset fonts cache.]

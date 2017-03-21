@@ -1,0 +1,79 @@
+# Corrects previous console command. https://github.com/nvbn/thefuck
+#alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
+#alias fuck='eval $(thefuck $(fc -ln -1)); fc -l -r'
+#alias fuck='$(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+#eval "$(thefuck --alias fuck)"
+
+# Search process with passed name
+alias pss="ps aux | grep -v grep | grep -i -e VSZ -e"
+
+# Generate random 32 char alphanum string
+# alias genstring='cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1'
+
+alias sudo='sudo '
+
+alias pls='sudo '
+
+# Generate random alphanum string
+genstr() {
+	local len
+	if [ $# -eq 0 ]; then
+		len=16
+	else
+		len=$1
+	fi
+	tr -dc A-Za-z0-9_ < /dev/urandom | head -c $len | xargs
+}
+
+# Working with archieves
+alias untargz='tar xvfz'
+alias untarbz='tar xvfj'
+
+# Geo for weather widget EUR|BY|BO000|MINSK
+
+# Failed apt-get update
+alias refresh_upd='sudo rm /var/lib/apt/lists/* -vf && sudo apt-get clean'
+
+# Simple print time and date
+alias now='date +"%T"'
+alias nowtime=now
+alias nowdate='date +"%d-%m-%Y"'
+
+# Stop after sending count ECHO_REQUEST packets #
+alias ping='time ping -c 5'
+# Do not wait interval 1 second, go fast #
+alias fastping='ping -c 100 -s.2'
+
+# Progress bar on file copy. Useful even local.
+alias copy="rsync --progress -ravz"
+
+# Different output for ls
+alias ls='ls --color=auto -F'
+alias ll='ls -al -F'
+alias li='ls --color=auto -F -l'
+
+# View permissions in a numeric notation
+alias chview="stat -c %a"
+
+# Update all git repos found under current location
+upd_git() {
+	find . -name .git -type d -prune | while read d; do
+		cd $d/..
+		echo -e "\033[1;36m $PWD >" "\033[1;32m git pull" "\033[0m"
+		git pull
+		cd $OLDPWD
+	done
+}
+
+# Run jekyll in docker from current folder (folder mounts into docker)
+#alias jek_up='docker run -p 4000:4000 -v $(pwd):/home -d -t ontouchstart/gh-pages jekyll serve'
+#alias jek_stop='docker stop $(docker ps -q -f COMMAND="jekyll serve")'
+
+# Set github settings for current .git as dein0s
+alias github_config='git config user.name "dein0s" && git config user.email "dein0s@users.noreply.github.com" && git config push.default simple'
+
+# Plex Media Server service management
+#alias plex_service='service plexmediaserver'
+
+# xclip
+alias clip='xclip -sel clip <'

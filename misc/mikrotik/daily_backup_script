@@ -1,0 +1,15 @@
+:log info "Daily backup STARTED"
+# Get Time
+:local ts [/system clock get time]
+:set ts ([:pick $ts 0 2].[:pick $ts 3 5].[:pick $ts 6 8])
+# Get Date
+:local ds [/system clock get date]
+:set ds ([:pick $ds 7 11].[:pick $ds 0 3].[:pick $ds 4 6])
+# Generate filename
+:local backupfile ([/system identity get name]."-".$ds."-".$ts)
+# Location
+:local loc "/disk1/backup/"
+# Run
+/system backup save name=($loc.$backupfile)
+/export file=($loc.$backupfile)
+:log info "Daily backup FINISHED"

@@ -1,0 +1,25 @@
+source "$HOME/.antigen.zsh"
+antigen init "$HOME/.antigenrc"
+
+
+# Terminix(Tilix) fix for VTE issue
+if [[ $TILIX_ID ]]; then
+        source /etc/profile.d/vte-2.91.sh
+fi
+
+# Pyenv settings
+if [[-f "$HOME/.pyenv" ]]; then
+  export PATH="$HOME/.pyenv/bin:$PATH"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+
+DEFAULT_USER="dein0s"
+CASE_SENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
+export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH"
+source $HOME/.alias
+
+#zsh
+alias zshconfig="nano $HOME/.zshrc"
+alias zshreload="source $HOME/.zshrc"

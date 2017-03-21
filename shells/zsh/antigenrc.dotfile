@@ -1,0 +1,19 @@
+antigen use oh-my-zsh
+antigen bundles <<EOBUNDLES
+git
+docker
+httpie
+history
+last-working-dir
+wd
+sudo
+web-search
+gitfast
+git-extras
+catimg
+chucknorris
+thefuck
+soimort/translate-shell
+EOBUNDLES
+antigen theme dein0s/dotfiles shells/zsh/themes/custom_agnoster
+antigen apply

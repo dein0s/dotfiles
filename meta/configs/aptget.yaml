@@ -1,0 +1,5 @@
+- apt-get:
+    - zsh
+    - [tilix, webupd8team/terminix]
+    - dconf-editor
+    - [atom, webupd8team/atom]

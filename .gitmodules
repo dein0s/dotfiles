@@ -1,0 +1,15 @@
+[submodule "meta/dotbot"]
+	path = meta/dotbot
+	url = https://github.com/anishathalye/dotbot
+	branch = master
+	ignore = dirty
+[submodule "shells/zsh/antigen"]
+	path = shells/zsh/antigen
+	url = https://github.com/zsh-users/antigen.git
+	branch = develop
+	ignore = dirty
+[submodule "plugins/dotbot-apt-get"]
+	path = plugins/dotbot-apt-get
+	url = https://github.com/dein0s/dotbot-apt-get.git
+	branch = master
+	ignore = dirty
