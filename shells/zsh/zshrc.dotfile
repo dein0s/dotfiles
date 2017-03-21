@@ -8,17 +8,17 @@ if [[ $TILIX_ID ]]; then
 fi
 
 # Pyenv settings
-if [[-f "$HOME/.pyenv" ]]; then
-  export PATH="$HOME/.pyenv/bin:$PATH"
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-fi
+#if [[-f "$HOME/.pyenv" ]]; then
+#  export PATH="$HOME/.pyenv/bin:$PATH"
+#  eval "$(pyenv init -)"
+#  eval "$(pyenv virtualenv-init -)"
+#fi
 
 DEFAULT_USER="dein0s"
 CASE_SENSITIVE="true"
 HYPHEN_INSENSITIVE="true"
 export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH"
-source $HOME/.alias
+source $HOME/.zsh_alias
 
 #zsh
 alias zshconfig="nano $HOME/.zshrc"
