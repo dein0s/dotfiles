@@ -13,6 +13,8 @@ antigen bundles <<EOBUNDLES
     chucknorris
     wd
     sudo
+    zsh-users/zsh-completions
+    zsh-users/zsh-autosuggestions
     soimort/translate-shell
 EOBUNDLES
 antigen theme dein0s/dotfiles shells/zsh/themes/custom_agnoster

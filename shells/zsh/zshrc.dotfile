@@ -8,11 +8,11 @@ if [[ $TILIX_ID ]]; then
 fi
 
 # Pyenv settings
-#if [[-f "$HOME/.pyenv" ]]; then
-#  export PATH="$HOME/.pyenv/bin:$PATH"
-#  eval "$(pyenv init -)"
-#  eval "$(pyenv virtualenv-init -)"
-#fi
+if [[ -d "$HOME/.pyenv" ]]; then
+   export PATH="$HOME/.pyenv/bin:$PATH"
+   eval "$(pyenv init -)"
+   eval "$(pyenv virtualenv-init -)"
+fi
 
 DEFAULT_USER="dein0s"
 CASE_SENSITIVE="true"
