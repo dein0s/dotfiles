@@ -2,27 +2,43 @@
 
 set -e
 
-BASE_CONFIG="base"
-CONFIG_SUFFIX=".yaml"
+# Root dir of dotfiles repo (where this script is located)
+BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# Folders for multiprofile/multiconfig scenarios
 META_DIR="meta"
 CONFIG_DIR="configs"
 PROFILES_DIR="profiles"
 
-DOTBOT_DIR="dotbot"
+# Dotbot location for multiprofile/multiconfig scenarios
+DOTBOT_DIR="${META_DIR}/dotbot"
 DOTBOT_BIN="bin/dotbot"
 
-PLUGINS_DIR="plugins"
-PLUGIN_APT_GET="dotbot-apt-get/aptget.py"
+# Base config name, started first before processing other configs if some
+BASE_CONFIG="base"
 
-PACKAGES_CONFIG='aptget'
+# Config suffix (can be json or yaml)
+CONFIG_SUFFIX=".yaml"
 
-BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Settings for plugins if some (can handle up to 1 subfolder, if you like submodules as I do)
+PLUGINS_ROOT_DIR="plugins"
+PLUGIN_DIRS=$(find "$BASE_DIR/$PLUGINS_ROOT_DIR" -maxdepth 1 -type d | paste -d,)
+PLUGINS_COMMAND=""
+if [[ $PLUGIN_DIRS ]]; then
+  for PLUGIN_DIR in $PLUGIN_DIRS; do
+    PLUGINS_COMMAND="$PLUGINS_COMMAND --plugin-dir ${PLUGIN_DIR}"
+  done
+fi
 
+# Packages config name
+PACKAGES_CONFIG="aptget"
 
+# Setup
 cd "${BASE_DIR}"
 git submodule update --init --recursive
 
-"${BASE_DIR}/${META_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASE_DIR}" -c "${META_DIR}/${BASE_CONFIG}${CONFIG_SUFFIX}"
+# Run Dotbot with base config before all
+"${BASE_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASE_DIR}" -c "${META_DIR}/${BASE_CONFIG}${CONFIG_SUFFIX}" $PLUGINS_COMMAND
 
-"${BASE_DIR}/${META_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -p "${BASE_DIR}/${PLUGINS_DIR}/${PLUGIN_APT_GET}" -d "${BASE_DIR}" -c "${META_DIR}/${CONFIG_DIR}/${PACKAGES_CONFIG}${CONFIG_SUFFIX}"
+# Do some magic (run Dotbot for the given config)
+"${BASE_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASE_DIR}" -c "${META_DIR}/${CONFIG_DIR}/${PACKAGES_CONFIG}${CONFIG_SUFFIX}" $PLUGINS_COMMAND

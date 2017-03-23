@@ -11,11 +11,13 @@ antigen bundles <<EOBUNDLES
     git-extras
     catimg
     chucknorris
-    wd
-    sudo
-    zsh-users/zsh-completions
     zsh-users/zsh-autosuggestions
     soimort/translate-shell
+    wd
+    sudo
 EOBUNDLES
 antigen theme dein0s/dotfiles shells/zsh/themes/custom_agnoster
 antigen apply
+
+# TEMP UNUSED bundles:
+# zsh-users/zsh-completions
