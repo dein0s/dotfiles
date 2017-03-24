@@ -1,15 +1,32 @@
-source "$HOME/.antigen.zsh"
-antigen init "$HOME/.antigenrc"
+export ANTIGEN_COMPDUMPFILE="${HOME}/.zcompdump"
+# If there is cache available
+if [[ -f "${ADOT:-"${HOME}"/.antigen}/.cache/.zcache-payload" ]]; then
+    # Load bundles statically
+    source "${ADOT:-"${HOME}"/.antigen}/.cache/.zcache-payload"
+
+    # You will need to call compinit
+    autoload -Uz compinit
+    compinit -d "${ANTIGEN_COMPDUMPFILE}"
+else
+    # If there is no cache available do load and execute antigen
+    source "${HOME}/.antigen.zsh"
+
+    # I'm using antigen-init here but your usual antigen-bundle,
+    # antigen-theme, antigen-apply will work as well
+    antigen init "${HOME}/.antigenrc"
+fi
+source "${HOME}/.antigen.zsh"
+antigen init "${HOME}/.antigenrc"
 
 
 # Terminix(Tilix) fix for VTE issue
 if [[ $TILIX_ID ]]; then
-        source /etc/profile.d/vte-2.91.sh
+        source "/etc/profile.d/vte-2.91.sh"
 fi
 
 # Pyenv settings
-if [[ -d "$HOME/.pyenv" ]]; then
-   export PATH="$HOME/.pyenv/bin:$PATH"
+if [[ -d "${HOME}/.pyenv" ]]; then
+   export PATH="${HOME}/.pyenv/bin:$PATH"
    eval "$(pyenv init -)"
    eval "$(pyenv virtualenv-init -)"
 fi
@@ -17,9 +34,10 @@ fi
 DEFAULT_USER="dein0s"
 CASE_SENSITIVE="true"
 HYPHEN_INSENSITIVE="true"
-export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH"
-source $HOME/.zsh_alias
+export PATH="${HOME}/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH"
+source "${HOME}/.zsh_alias"
+source "${HOME}/.zsh_functions"
 
-#zsh
-alias zshconfig="nano $HOME/.zshrc"
-alias zshreload="source $HOME/.zshrc"
+#zshrc actions
+alias zshconfig="nano ${HOME}/.zshrc"
+alias zshreload="source ${HOME}/.zshrc"

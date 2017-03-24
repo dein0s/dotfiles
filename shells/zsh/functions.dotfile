@@ -1,0 +1,41 @@
+# Generate random alphanum string
+genstr() {
+	local len
+	if [ $# -eq 0 ]; then
+		len=16
+	else
+		len=$1
+	fi
+	tr -dc A-Za-z0-9_ < /dev/urandom | head -c $len | xargs
+}
+
+# Update all git repos found under current location
+upd_git() {
+	find . -name .git -type d -prune | while read d; do
+		cd $d/..
+		echo -e "\033[1;36m $PWD >" "\033[1;32m git pull" "\033[0m"
+		git pull
+		cd $OLDPWD
+	done
+}
+
+# Add all untracked symlinks in the current repo to .gitignore
+# Inspired by http://magento.stackexchange.com/questions/4641/how-to-git-ignore-symlinks-on-a-magento-module-installed-by-composer/37575#37575
+git_ignore_symlinks () {
+	INSIDE_GIT_REPO="$(git rev-parse --is-inside-work-tree 2>/dev/null)"
+	if [[ ${INSIDE_GIT_REPO} ]]; then
+		GIT_REPO_PATH=$(git rev-parse --show-toplevel)
+		git status --porcelain | grep "^??" | sed "s/^?? //" | while read FILE; do
+			if [[ -L "${FILE}" ]]; then
+				echo -e "\033[1;32m ${PWD} >" "\033[1;36m processing link ${FILE}" "\033[0m"
+			  echo "# Symlink" >> "${GIT_REPO_PATH}/.gitignore"
+				echo "${FILE}" >> "${GIT_REPO_PATH}/.gitignore"
+			elif [[ -d "${FILE}" ]]; then
+				echo "# Symlink" >> "${GIT_REPO_PATH}/.gitignore"
+				echo "${FILE}\*" >> "${GIT_REPO_PATH}/.gitignore"
+			fi
+		done
+	else
+		echo -e "\033[1;32m ${PWD} >" "\033[1;31m not under git" "\033[0m"
+	fi
+}
