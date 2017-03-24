@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+sudo true
 set -e
 
 # Root dir of dotfiles repo (where this script is located)
@@ -41,4 +41,4 @@ git submodule update --init --recursive
 "${BASE_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASE_DIR}" -c "${META_DIR}/${BASE_CONFIG}${CONFIG_SUFFIX}" $PLUGINS_COMMAND
 
 # Do some magic (run Dotbot for the given config)
-"${BASE_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASE_DIR}" -c "${META_DIR}/${CONFIG_DIR}/${PACKAGES_CONFIG}${CONFIG_SUFFIX}" $PLUGINS_COMMAND
+sudo "${BASE_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASE_DIR}" -c "${META_DIR}/${CONFIG_DIR}/${PACKAGES_CONFIG}${CONFIG_SUFFIX}" $PLUGINS_COMMAND
