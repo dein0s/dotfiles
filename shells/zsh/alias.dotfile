@@ -9,8 +9,10 @@ alias sudo='sudo '
 alias pls='sudo '
 
 # Working with archieves
-alias untargz='tar xvfz'
-alias untarbz='tar xvfj'
+if [[ ! $(which extract) ]]; then  # if extract plugin not installed
+  alias untargz='tar xvfz'
+  alias untarbz='tar xvfj'
+fi
 
 # Geo for weather widget EUR|BY|BO000|MINSK
 
@@ -49,4 +51,11 @@ alias github_config='git config user.name "dein0s" && git config user.email "dei
 #alias plex_service='service plexmediaserver'
 
 # xclip
-alias clip='xclip -sel clip <'
+if [[ $(which xclip) ]]; then
+  alias clip='xclip -sel clip <'
+fi
+
+# alias for colorize plugin / oh-my-zsh
+if [[ $(which colorize_via_pygmentize) ]]; then
+  alias ccat='colorize_via_pygmentize'
+fi

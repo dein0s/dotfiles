@@ -1,18 +1,23 @@
 antigen use oh-my-zsh
 antigen bundles <<EOBUNDLES
-    git
-    thefuck
-    docker
-    httpie
-    history
-    last-working-dir
-    web-search
-    gitfast
-    git-extras
     catimg
     chucknorris
+    colorize
+    command-not-found
+    cp
+    docker
+    extract
+    git
+    git-extras
+    gitfast
+    history
+    httpie
+    per-directory-history
+    soimort/translate-shell@develop
+    taskwarrior
+    thefuck
+    web-search
     zsh-users/zsh-autosuggestions
-    soimort/translate-shell
     wd
     sudo
 EOBUNDLES
@@ -21,3 +26,4 @@ antigen apply
 
 # TEMP UNUSED bundles:
 # zsh-users/zsh-completions
+# last-working-dir

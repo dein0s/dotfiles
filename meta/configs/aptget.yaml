@@ -1,6 +1,8 @@
 - aptget:
-    zsh:
-    dconf-editor:
-    htop:
-    tilix: ppa:webupd8team/terminix
     atom: webupd8team/atom
+    dconf-editor:
+    git-extras:
+    htop:
+    task: ppa:chronitis/task
+    tilix: ppa:webupd8team/terminix
+    zsh:
