@@ -14,13 +14,13 @@
 locale=ru-BY
 
 # Files
-data.location=~/.task
+data.location=~/.task-data
 
 # Move to dotfiles and symlink
-include ~/.task/extras/solarized-dark-256.theme
+include ~/.task-data/extras/solarized-dark-256.theme
 
 # Calendar settings
-include ~/.task/extras/holidays.be-BY.rc
+include ~/.task-data/extras/holidays.be-BY.rc
 weekstart=Monday
 displayweeknumber=no
 
