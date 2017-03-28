@@ -1,22 +1,15 @@
 export ANTIGEN_COMPDUMPFILE="${HOME}/.zcompdump"
-# If there is cache available
+
+# If there is antigen cache available
 if [[ -f "${ADOT:-"${HOME}"/.antigen}/.cache/.zcache-payload" ]]; then
     # Load bundles statically
     source "${ADOT:-"${HOME}"/.antigen}/.cache/.zcache-payload"
-
-    # You will need to call compinit
     autoload -Uz compinit
     compinit -d "${ANTIGEN_COMPDUMPFILE}"
 else
-    # If there is no cache available do load and execute antigen
     source "${HOME}/.antigen.zsh"
-
-    # I'm using antigen-init here but your usual antigen-bundle,
-    # antigen-theme, antigen-apply will work as well
     antigen init "${HOME}/.antigenrc"
 fi
-source "${HOME}/.antigen.zsh"
-antigen init "${HOME}/.antigenrc"
 
 
 # Terminix(Tilix) fix for VTE issue

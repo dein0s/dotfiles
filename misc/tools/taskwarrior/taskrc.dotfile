@@ -1,0 +1,32 @@
+# [Created by task 2.5.0 3/26/2017 23:52:38]
+# Taskwarrior program configuration file.
+# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
+# 'man task-sync' or 'man taskrc'
+
+# Here is an example of entries that use the default, override and blank values
+#   variable=foo   -- By specifying a value, this overrides the default
+#   variable=      -- By specifying no value, this means no default
+#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
+
+# Use the command 'task show' to see all defaults and overrides
+
+
+locale=ru-BY
+
+# Files
+data.location=~/.task
+
+# Move to dotfiles and symlink
+include ~/.task/extras/solarized-dark-256.theme
+
+# Calendar settings
+include ~/.task/extras/holidays.be-BY.rc
+weekstart=Monday
+displayweeknumber=no
+
+
+# For time-tracking hook
+max_active_tasks=3
+uda.totalactivetime.type=duration
+uda.totalactivetime.label=Total active time
+uda.totalactivetime.values=''

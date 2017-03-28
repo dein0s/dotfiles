@@ -1,8 +1,10 @@
 - aptget:
-    atom: webupd8team/atom
+    atom: ppa:webupd8team/atom
     dconf-editor:
     git-extras:
     htop:
+    python-pip:
+    task: ppa:chronitis/task
     task: ppa:chronitis/task
     tilix: ppa:webupd8team/terminix
     zsh:
