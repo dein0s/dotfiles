@@ -1,0 +1,2 @@
+# Sync tasks from taskwarrior with remote (inthe.am) server every 15 mins
+*/15 * * * * (task sync) > /dev/null 2>&1

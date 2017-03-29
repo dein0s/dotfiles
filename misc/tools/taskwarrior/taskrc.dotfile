@@ -30,3 +30,11 @@ max_active_tasks=3
 uda.totalactivetime.type=duration
 uda.totalactivetime.label=Total active time
 uda.totalactivetime.values=''
+
+# Sync via http:://inthe.am
+taskd.certificate=~/.ssh/private.certificate.pem
+taskd.key=~/.ssh/private.key.pem
+taskd.ca=~/.ssh/ca.cert.pem
+taskd.server=taskwarrior.inthe.am:53589
+taskd.credentials=inthe_am/denisevich.p/725f1754-f773-45c0-8e37-e254161a2801
+taskd.trust=ignore hostname

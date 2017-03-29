@@ -1,2 +1,2 @@
-# m h  dom mon dow   command
+# Automatically commit&push new modifications of staged files to remote git repo
 */15 * * * * (cd $HOME/.task-data && git commit -am "Autopush new modifications on $(date)" && $HOME/.dotfiles/scripts/git-key.sh -i $HOME/.ssh/autopush_dein0s push origin master) > /dev/null 2>&1
