@@ -16,3 +16,5 @@
 [submodule "misc/tools/taskwarrior/taskwarrior-data"]
 	path = misc/tools/taskwarrior/taskwarrior-data
 	url = git@gitlab.com:dein0s/taskwarrior-data.git
+	branch = master
+	itnore = dirty

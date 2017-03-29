@@ -32,7 +32,7 @@ fi
 
 # Setup
 cd "${BASE_DIR}"
-git submodule update --init --recursive
+git submodule update --init --recursive --remote
 
 # Run Dotbot with base config before all
 "${BASE_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASE_DIR}" -c "${META_DIR}/${BASE_CONFIG}${CONFIG_SUFFIX}" $PLUGINS_COMMAND
