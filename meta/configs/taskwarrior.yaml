@@ -5,3 +5,4 @@
 # Check if hook installed -> create symlink
 - shell:
     - ["(which taskwarrior_time_tracking_hook) && ln -sf $(which taskwarrior_time_tracking_hook) ~/.task-data/hooks/on-modify.timetracking", "Create symlink for taskwarrior time-tracking hook"]
+    - ["echo 'Notification'", "Don't forget to add cron job from ~/.dotfiles/misc/tools/taskwarrior/task_auto_commit_push.cron"]
