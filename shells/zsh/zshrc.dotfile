@@ -1,33 +1,31 @@
-export ANTIGEN_COMPDUMPFILE="${HOME}/.zcompdump"
+# That way Antigen will store it's info in an independent file, so it won't get corrupted by any other script/software
+export ADOTDIR="${HOME}/.antigen"
+export _ANTIGEN_COMPDUMP="${ADOTDIR:-$HOME/.antigen}/.zcompdump"
+export _ANTIGEN_LOG="${ADOTDIR:-$HOME/.antigen}/antigen.log"
 
-# If there is antigen cache available
-if [[ -f "${ADOT:-"${HOME}"/.antigen}/.cache/.zcache-payload" ]]; then
-    # Load bundles statically
-    source "${ADOT:-"${HOME}"/.antigen}/.cache/.zcache-payload"
-    autoload -Uz compinit
-    compinit -d "${ANTIGEN_COMPDUMPFILE}"
-else
-    source "${HOME}/.antigen.zsh"
-    antigen init "${HOME}/.antigenrc"
-fi
-
+# Using Antigen 1.4.1+ (from develop branch), it automatically check for cache and load it if its exists
+source "${HOME}/.antigen.zsh"
+antigen init "${HOME}/.antigenrc"
 
 # Terminix(Tilix) fix for VTE issue
 if [[ $TILIX_ID ]]; then
         source "/etc/profile.d/vte-2.91.sh"
 fi
 
-# Pyenv settings
+# If PyEnv installed and folder exists in $HOME - load it
 if [[ -d "${HOME}/.pyenv" ]]; then
    export PATH="${HOME}/.pyenv/bin:$PATH"
    eval "$(pyenv init -)"
    eval "$(pyenv virtualenv-init -)"
 fi
 
+# OMZ settings
 DEFAULT_USER="dein0s"
 CASE_SENSITIVE="true"
 HYPHEN_INSENSITIVE="true"
+
 export PATH="${HOME}/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH"
+
 source "${HOME}/.zsh_alias"
 source "${HOME}/.zsh_functions"
 

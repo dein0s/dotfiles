@@ -17,7 +17,8 @@ locale=ru-BY
 data.location=~/.task-data
 
 # Move to dotfiles and symlink
-include ~/.task-data/extras/solarized-dark-256.theme
+#include ~/.task-data/extras/solarized-dark-256.theme
+include ~/.task-data/extras/dark-256.theme
 
 # Calendar settings
 include ~/.task-data/extras/holidays.be-BY.rc
