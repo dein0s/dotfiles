@@ -24,6 +24,9 @@ DEFAULT_USER="dein0s"
 CASE_SENSITIVE="true"
 HYPHEN_INSENSITIVE="true"
 
+# Settings for djui/alias-tips plugin
+export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Tip: "
+
 export PATH="${HOME}/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH"
 
 source "${HOME}/.zsh_alias"

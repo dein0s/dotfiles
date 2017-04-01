@@ -5,9 +5,10 @@
     htop:
     python-pip:
     task: ppa:chronitis/task
-    task: ppa:chronitis/task
     tilix: ppa:webupd8team/terminix
     zsh:
+    # for ansiweather plugin / zsh
+    jq:
 
 - shell:
     - ["pip install --upgrade taskwarrior-time-tracking-hook", "Install time-tracking hook for taskwarrior"]

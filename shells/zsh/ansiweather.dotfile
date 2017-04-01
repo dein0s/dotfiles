@@ -1,0 +1,6 @@
+location:Minsk,BY
+fetch_cmd:wget -qO-
+units:metric
+forecast:0
+show_daylight:true
+timeformat:%b %d %T

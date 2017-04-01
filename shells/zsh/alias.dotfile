@@ -8,10 +8,15 @@ alias sudo='sudo '
 
 alias pls='sudo '
 
-# Working with archieves
+# https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/extract
 if [[ ! $(which extract) ]]; then  # if extract plugin not installed
   alias untargz='tar xvfz'
   alias untarbz='tar xvfj'
+fi
+
+# https://github.com/fcambus/ansiweather
+if [[ $(which ansiweather) ]]; then  # if ansiweather plugin
+  alias weather='ansiweather'
 fi
 
 # Geo for weather widget EUR|BY|BO000|MINSK

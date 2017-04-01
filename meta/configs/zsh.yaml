@@ -1,6 +1,12 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
 - link:
     ~/.zshrc: shells/zsh/zshrc.dotfile
     ~/.zsh_alias: shells/zsh/alias.dotfile
     ~/.zsh_functions: shells/zsh/functions.dotfile
     ~/.antigenrc: shells/zsh/antigenrc.dotfile
     ~/.antigen.zsh: shells/zsh/antigen/antigen.zsh
+    ~/.ansiweatherrc: shells/zsh/ansiweather.dotfile
