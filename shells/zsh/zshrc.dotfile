@@ -3,20 +3,14 @@ export ADOTDIR="${HOME}/.antigen"
 export _ANTIGEN_COMPDUMP="${ADOTDIR:-$HOME/.antigen}/.zcompdump"
 export _ANTIGEN_LOG="${ADOTDIR:-$HOME/.antigen}/antigen.log"
 
-# Using Antigen 1.4.1+ (from develop branch), it automatically check for cache and load it if its exists
+# Using Antigen 2.0.x (from develop branch), it automatically check for cache and load it if its exists
+typeset -A ANTIGEN_CHECK_FILES=("${HOME}/.zshrc" "${HOME}/.antigenrc")
 source "${HOME}/.antigen.zsh"
 antigen init "${HOME}/.antigenrc"
 
 # Terminix(Tilix) fix for VTE issue
 if [[ $TILIX_ID ]]; then
-        source "/etc/profile.d/vte-2.91.sh"
-fi
-
-# If PyEnv installed and folder exists in $HOME - load it
-if [[ -d "${HOME}/.pyenv" ]]; then
-   export PATH="${HOME}/.pyenv/bin:$PATH"
-   eval "$(pyenv init -)"
-   eval "$(pyenv virtualenv-init -)"
+    source "/etc/profile.d/vte-2.91.sh"
 fi
 
 # OMZ settings
@@ -27,11 +21,17 @@ HYPHEN_INSENSITIVE="true"
 # Settings for djui/alias-tips plugin
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Tip: "
 
-export PATH="${HOME}/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH"
-
 source "${HOME}/.zsh_alias"
 source "${HOME}/.zsh_functions"
 
 #zshrc actions
 alias zshconfig="nano ${HOME}/.zshrc"
 alias zshreload="source ${HOME}/.zshrc"
+
+# If PyEnv installed and folder exists in $HOME - load it.
+# Must be placed at the end of shell config file: https://github.com/pyenv/pyenv#installation
+if [[ -d "${HOME}/.pyenv" ]]; then
+   export PATH="${HOME}/.pyenv/bin:$PATH"
+   eval "$(pyenv init -)"
+   eval "$(pyenv virtualenv-init -)"
+fi

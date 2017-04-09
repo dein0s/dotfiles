@@ -28,4 +28,5 @@ antigen apply
 
 # TEMP UNUSED bundles:
 # zsh-users/zsh-completions
+# molovo/tipz
 # last-working-dir
