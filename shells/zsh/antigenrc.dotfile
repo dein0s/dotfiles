@@ -17,8 +17,8 @@ antigen bundles <<EOBUNDLES
     taskwarrior
     thefuck
     web-search
-    zsh-users/zsh-autosuggestions
     djui/alias-tips
+    zsh-users/zsh-autosuggestions
     fcambus/ansiweather
     wd
     sudo

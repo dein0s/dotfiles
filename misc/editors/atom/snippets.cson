@@ -1,0 +1,10 @@
+".source.python, .text.todo":
+  "nb":
+    "prefix": "nb"
+    "body": "# NB: $0"
+  "todo":
+    "prefix": "todo"
+    "body": "# TODO: $0"
+  "hack":
+    "prefix": "hack"
+    "body": "# HACK: $0"

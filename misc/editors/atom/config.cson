@@ -1,0 +1,101 @@
+"*":
+  "atom-isort":
+    checkOnSave: false
+    isortPath: "/home/dein0s/.pyenv/shims/isort"
+  "autocomplete-python":
+    useSnippets: "all"
+  core:
+    autoHideMenuBar: true
+    customFileTypes:
+      "source.python": [
+        "pym"
+        "pys"
+      ]
+      "source.shell": [
+        "dotfile"
+      ]
+    disabledPackages: [
+      "linter-pylint"
+      "linter-pycodestyle"
+      "language-python"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      ".idea"
+    ]
+    openEmptyEditorOnStart: false
+    projectHome: "/home/dein0s/Projects"
+    telemetryConsent: "limited"
+  editor:
+    invisibles:
+      cr: false
+      eol: false
+    preferredLineLength: 120
+    showInvisibles: true
+  "exception-reporting":
+    userId: "0384469c-3ce7-45aa-8d93-87430b8278b5"
+  "linter-pycodestyle":
+    executablePath: "/home/dein0s/.pyenv/shims/pycodestyle"
+    maxLineLength: 120
+  "linter-pylint":
+    executable: "/home/dein0s/.pyenv/shims/pylint"
+  "linter-ui-default":
+    panelHeight: 284
+    showPanel: true
+  "package-sync":
+    createOnChange: true
+    forceOverwrite: true
+  "platformio-ide-terminal":
+    ansiColors:
+      normal:
+        blue: "#3465a4"
+      zBright:
+        brightBlue: "#729ecf"
+    core:
+      mapTerminalsToAutoOpen: true
+    iconColors:
+      blue: "#729ecf"
+    style:
+      fontFamily: "Meslo LG S for Powerline"
+      fontSize: "13"
+    toggles: {}
+  "python-isort":
+    isortPath: "/home/dein0s/.pyenv/shims/isort"
+  "sync-settings":
+    _lastBackupHash: "307befb56dfc146c36db0779d17f1d5dfe083270"
+    gistId: "a24c94e9c8158e885068c8fecfe03043"
+  "todo-show":
+    findTheseTodos: [
+      "TODO"
+      "FIXME"
+      "CHANGED"
+      "XXX"
+      "IDEA"
+      "HACK"
+      "NOTE"
+      "REVIEW"
+      "NB"
+      "BUG"
+      "QUESTION"
+      "COMBAK"
+      "TEMP"
+      "pylint"
+    ]
+    ignoreThesePaths: [
+      "node_modules"
+      "vendor"
+      "bower_components"
+      "*temp/"
+      "README.md"
+    ]
+    sortBy: "Type"
+  "tree-view":
+    hideVcsIgnoredFiles: false
+  welcome:
+    showOnStartup: false

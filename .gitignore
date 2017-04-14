@@ -3,6 +3,14 @@
 *debug/
 *.python-version
 *install-debug
+/misc/editors/atom/nohup.out
+/misc/editors/atom/.apm/
+/misc/editors/atom/.node-gyp/
+/misc/editors/atom/blob-store/
+/misc/editors/atom/compile-cache/
+/misc/editors/atom/packages/
+/misc/editors/atom/recovery/
+/misc/editors/atom/storage/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
