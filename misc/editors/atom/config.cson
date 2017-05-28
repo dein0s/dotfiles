@@ -68,7 +68,7 @@
   "python-isort":
     isortPath: "/home/dein0s/.pyenv/shims/isort"
   "sync-settings":
-    _lastBackupHash: "307befb56dfc146c36db0779d17f1d5dfe083270"
+    _lastBackupHash: "fdab074b1d60c130618c3804b4108d7f30276b51"
     gistId: "a24c94e9c8158e885068c8fecfe03043"
   "todo-show":
     findTheseTodos: [
@@ -95,7 +95,6 @@
       "README.md"
     ]
     sortBy: "Type"
-  "tree-view":
-    hideVcsIgnoredFiles: false
+  "tree-view": {}
   welcome:
     showOnStartup: false
