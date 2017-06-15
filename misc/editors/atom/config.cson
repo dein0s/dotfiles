@@ -3,6 +3,7 @@
     checkOnSave: false
     isortPath: "/home/dein0s/.pyenv/shims/isort"
   "autocomplete-python":
+    extraPaths: "/home/dein0s/Projects/plex_docker/config/Library/Application Support/Plex Media Server/Plug-ins/onlife_ru.bundle/Contents/Libraries/Shared;/home/dein0s/Projects/Framework.bundle/Contents/Resources/Versions/2/Python"
     useSnippets: "all"
   core:
     autoHideMenuBar: true

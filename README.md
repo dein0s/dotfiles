@@ -58,38 +58,54 @@ meta/profiles/
 ```
 meta/configs
 ├── aptget.yaml
+├── atom.yaml
 ├── dotfiles.yaml
 ├── fonts.yaml
 ├── scripts.yaml
+├── taskwarrior.yaml
 ├── tilix.yaml
 └── zsh.yaml
+
 ```
 
 ### Dotfiles
 
 ```
 .
-├── editors
 ├── gui
 │   └── fonts
+│       ├── Meslo LG S Regular for Powerline Nerd Font Complete.otf
+│       └── Meslo LG S Regular for Powerline.otf
 ├── misc
-├── scripts
-│   └── fix_zsh_history.sh
+│   ├── editors
+│   ├── mikrotik
+│   │   └── daily_backup_script
+│   ├── scripts
+│   │   ├── fix_zsh_history.sh
+│   │   └── git-key.sh
+│   └── tools
+│       └── taskwarrior
+│           ├── task_auto_commit_push.cron
+│           ├── taskrc.dotfile
+│           └── task_sync_inthe_am.cron
 ├── shells
 │   └── zsh
 │       ├── alias.dotfile
+│       ├── ansiweather.dotfile
 │       ├── antigenrc.dotfile
+│       ├── functions.dotfile
 │       ├── themes
 │       │   └── custom_agnoster.zsh-theme
 │       └── zshrc.dotfile
-├── terminals
-│   └── tilix
-│       └── tilix.dconf
-└── tools
+└── terminals
+    └── tilix
+        ├── schemes
+        │   └── custom_color_scheme.json
+        └── tilix.dconf
 
 ```
 
 #### Todo (someday this time may come)
-- [ ] atom configs (excluding synced via sync-settings plugin)
+- [x] atom configs (excluding synced via sync-settings plugin)
 - [ ] git settings (including gitkraken)
 - [ ] plex-dev files
