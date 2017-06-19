@@ -1,7 +1,8 @@
 # That way Antigen will store it's info in an independent file, so it won't get corrupted by any other script/software
 export ADOTDIR="${HOME}/.antigen"
-export _ANTIGEN_COMPDUMP="${ADOTDIR:-$HOME/.antigen}/.zcompdump"
-export _ANTIGEN_LOG="${ADOTDIR:-$HOME/.antigen}/antigen.log"
+export ANTIGEN_COMPDUMP="${ADOTDIR}/.zcompdump"
+export ANTIGEN_LOG="${ADOTDIR}/antigen.log"
+# export ANTIGEN_DEBUG_LOG="${ADOTDIR}/antigen_debug.log"
 
 # Using Antigen 2.0.x (from develop branch), it automatically check for cache and load it if its exists
 typeset -A ANTIGEN_CHECK_FILES=("${HOME}/.zshrc" "${HOME}/.antigenrc")
